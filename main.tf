@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.0.5"
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -8,11 +9,9 @@ terraform {
 }
 
 provider "google" {
-  credentials = var.credentials_file
-
-  project = var.project
-  region  = var.region
-  zone    = var.zone
+  project = var.gcp_project_id
+  region  = var.gcp_region
+  zone    = var.gcp_zone
 }
 
 # Required permissions:
