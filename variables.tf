@@ -1,11 +1,8 @@
-variable "credentials" {
-  default   = ""
+variable "credentials_file" {
   sensitive = true
 }
 
-variable "project" {
-  default = ""
-}
+variable "project" {}
 
 variable "region" {
   default = "asia-southeast2"
