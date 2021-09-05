@@ -7,14 +7,8 @@ terraform {
   }
 }
 
-locals {
-  credentials = (
-    var.credentials != "" ? var.credentials : file(".env/service-account.json")
-  )
-}
-
 provider "google" {
-  credentials = local.credentials
+  credentials = var.credentials_file
 
   project = var.project
   region  = var.region
